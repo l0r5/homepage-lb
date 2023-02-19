@@ -1,15 +1,13 @@
-import { useState } from "react";
-import "./App.css";
+import './App.css';
+import { Layout } from './components/Layout';
+import { LandingPage } from './page/LandingPage';
 
 function App() {
-  const [count, setCount] = useState(0);
 
   return (
-    <div className="App">
-      <div className="card">
-        Hello World
-      </div>
-    </div>
+    <Layout>
+      <LandingPage />
+    </Layout>
   );
 }
 
