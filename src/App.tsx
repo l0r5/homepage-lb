@@ -3,7 +3,6 @@ import { Layout } from './components/Layout';
 import { LandingPage } from './page/LandingPage';
 
 function App() {
-
   return (
     <Layout>
       <LandingPage />

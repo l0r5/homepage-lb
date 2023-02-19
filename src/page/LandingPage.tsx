@@ -1,5 +1,5 @@
 import { Box, Container, Heading } from '@chakra-ui/react';
-import { ReactElement, ReactNode } from 'react';
+import { ReactElement } from 'react';
 
 export const LandingPage = (): ReactElement => {
   return (
