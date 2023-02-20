@@ -20,7 +20,7 @@ export const Logo = () => {
     <Link href={'/'}>
       <a>
         <LogoBox>
-          <img src={initialsLogoImg} width={30} height={30} alt={'logo'} color={'#ffd400'} />
+          <img src={initialsLogoImg} width={30} height={30} alt={'logo'} />
           <Text color={useColorModeValue('gray.800', 'whiteAlpha.900')}
                 fontFamily="M PLUS Rounded 1c"
                 fontWeight="bold"

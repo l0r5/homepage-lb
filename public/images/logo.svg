@@ -3,25 +3,26 @@
   <defs>
     <style>
       .cls-1 {
-        stroke: #2e2d2c;
+      fill: none;
+      stroke: #2e2d2c;
       }
 
-      .cls-1, .cls-2 {
-        fill: none;
+      .cls-2 {
+      fill: #ffd400;
       }
 
       .cls-3 {
-        fill: #3c3c3b;
+      fill: #3c3c3b;
       }
 
       .cls-3, .cls-4 {
-        font-family: Montserrat-SemiBold, Montserrat;
-        font-size: 16px;
-        font-weight: 600;
+      font-family: Montserrat-SemiBold, Montserrat;
+      font-size: 16px;
+      font-weight: 600;
       }
 
       .cls-4 {
-        fill: #2e2d2c;
+      fill: #2e2d2c;
       }
     </style>
   </defs>
