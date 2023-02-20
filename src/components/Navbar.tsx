@@ -14,6 +14,7 @@ import {
 import { HamburgerIcon } from '@chakra-ui/icons';
 
 import { Logo } from './Logo';
+import { ThemeToggleButton } from './ThemeToggleButton';
 
 interface LinkProps {
   href: string;
@@ -71,6 +72,7 @@ export const Navbar = ({ path }: NavbarProps) => {
           </LinkItem>
         </Stack>
         <Box flex={1} textAlign={'right'}>
+          <ThemeToggleButton />
           <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
             <Menu>
               <MenuButton as={IconButton} icon={<HamburgerIcon />} variant={'outline'} aria-label={'Options'} />
