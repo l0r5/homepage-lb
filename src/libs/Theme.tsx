@@ -4,7 +4,7 @@ import { extendTheme, ThemeConfig, StyleFunctionProps } from '@chakra-ui/react';
 const styles = {
   global: (props: StyleFunctionProps) => ({
     body: {
-      bg: mode('#f0e7db', '#202023')(props)
+      bg: mode('#f0e7db', '#202023')(props),
     }
   })
 };
