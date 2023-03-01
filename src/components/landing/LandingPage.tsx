@@ -1,10 +1,10 @@
 import { Box, Button, Container, Heading, Link, List, ListItem, useColorModeValue } from '@chakra-ui/react';
 import { ReactElement } from 'react';
-import ProfileImage from '../components/ProfileImage';
-import { Section } from '../components/Section';
-import { Paragraph } from '../components/Paragraph';
+import ProfileImage from '../style/ProfileImage';
+import { Section } from '../Section';
+import { Paragraph } from '../style/Paragraph';
 import { ChevronRightIcon } from '@chakra-ui/icons';
-import { BioSection, BioYear } from '../components/Bio';
+import { BioSection, BioYear } from '../style/Bio';
 import { IoLogoTwitter, IoLogoGithub, IoLogoLinkedin } from 'react-icons/io5';
 
 export const LandingPage = (): ReactElement => {

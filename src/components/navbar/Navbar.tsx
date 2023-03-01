@@ -13,8 +13,8 @@ import {
 } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 
-import { Logo } from './Logo';
-import { ThemeToggleButton } from './ThemeToggleButton';
+import { Logo } from '../landing/Logo';
+import { ThemeToggleButton } from '../ThemeToggleButton';
 
 interface LinkProps {
   href: string;

@@ -1,12 +1,16 @@
 import './App.css';
 import { Layout } from './components/Layout';
-import { LandingPage } from './page/LandingPage';
+import { LandingPage } from './components/landing/LandingPage';
+import { Theme } from './libs/Theme';
+import { ChakraProvider } from '@chakra-ui/react';
 
 function App() {
   return (
-    <Layout>
-      <LandingPage />
-    </Layout>
+    <ChakraProvider theme={Theme}>
+      <Layout>
+        <LandingPage />
+      </Layout>
+    </ChakraProvider>
   );
 }
 

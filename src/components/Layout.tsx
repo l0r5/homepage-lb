@@ -1,7 +1,8 @@
 import React, { ReactElement, ReactNode } from 'react';
-import { Box, ChakraProvider, Container } from '@chakra-ui/react';
-import { Navbar } from './Navbar';
-import { Theme } from '../libs/Theme';
+import { Box, Container } from '@chakra-ui/react';
+import { Navbar } from './navbar/Navbar';
+import { AnimatePresence } from 'framer-motion';
+import { Footer } from './footer/Footer';
 
 interface LayoutProps {
   children: ReactNode;
@@ -9,13 +10,22 @@ interface LayoutProps {
 
 export const Layout = ({ children }: LayoutProps): ReactElement => {
   return (
-    <ChakraProvider theme={Theme}>
       <Box as={'main'} pb={8}>
-        <Navbar path='/' />
-        <Container maxW={'container.md'} pt={14}>
-          {children}
-        </Container>
+        <Navbar path="/" />
+        <AnimatePresence
+          mode={'wait'}
+          initial={true}
+          onExitComplete={() => {
+            if (typeof window !== 'undefined') {
+              window.scrollTo({ top: 0 });
+            }
+          }}
+        >
+          <Container maxW={'container.md'} pt={14}>
+            {children}
+          </Container>
+        </AnimatePresence>
+        <Footer />
       </Box>
-    </ChakraProvider>
   );
 };
