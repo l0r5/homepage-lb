@@ -1,8 +1,8 @@
 import React, { ReactElement, ReactNode } from 'react';
 import { Box, Container } from '@chakra-ui/react';
-import { Navbar } from './navbar/Navbar';
+import { Navbar } from '../navbar/Navbar';
 import { AnimatePresence } from 'framer-motion';
-import { Footer } from './footer/Footer';
+import { Footer } from '../footer/Footer';
 
 interface LayoutProps {
   children: ReactNode;

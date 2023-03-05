@@ -1,10 +1,10 @@
 import { Box, Button, Container, Heading, Link, List, ListItem, useColorModeValue } from '@chakra-ui/react';
 import { ReactElement } from 'react';
-import ProfileImage from '../style/ProfileImage';
-import { Section } from '../Section';
-import { Paragraph } from '../style/Paragraph';
+import ProfileImage from '../layout/ProfileImage';
+import { Section } from '../layout/Section';
+import { Paragraph } from '../layout/Paragraph';
 import { ChevronRightIcon } from '@chakra-ui/icons';
-import { BioSection, BioYear } from '../style/Bio';
+import { BioSection, BioYear } from '../layout/Bio';
 import { IoLogoTwitter, IoLogoGithub, IoLogoLinkedin } from 'react-icons/io5';
 
 export const LandingPage = (): ReactElement => {
@@ -70,7 +70,7 @@ export const LandingPage = (): ReactElement => {
           challenging role.
         </Paragraph>
         <Box textAlign={'center'} my={4}>
-          <Button rightIcon={<ChevronRightIcon />} colorScheme={'teal'}>
+          <Button as={Link} href={'/works'} rightIcon={<ChevronRightIcon />} colorScheme={'teal'}>
             My portfolio
           </Button>
         </Box>

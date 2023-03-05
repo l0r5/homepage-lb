@@ -14,7 +14,7 @@ import {
 import { HamburgerIcon } from '@chakra-ui/icons';
 
 import { Logo } from '../landing/Logo';
-import { ThemeToggleButton } from '../ThemeToggleButton';
+import { ThemeToggleButton } from '../theme/ThemeToggleButton';
 
 interface LinkProps {
   href: string;
@@ -49,7 +49,7 @@ export const Navbar = ({ path }: NavbarProps) => {
       style={{ backdropFilter: 'blur(10px)' }}
       zIndex={1}
     >
-      <Container display={'flex'} p={2} maxW={'container.md'} flexWrap={'wrap'} alignContent={'center'}
+      <Container display={'flex'} p={2} maxW={'container.md'} flexWrap={'wrap'} alignItems={'center'}
                  justifyContent={'space-between'}>
         <Flex align={'center'} mr={5}>
           <Heading as={'h1'} size={'lg'} letterSpacing={'tighter'}>
@@ -67,8 +67,8 @@ export const Navbar = ({ path }: NavbarProps) => {
           <LinkItem href={'/works'} path={path}>
             Works
           </LinkItem>
-          <LinkItem href={'/posts'} path={path}>
-            Posts
+          <LinkItem href={'/blog'} path={path}>
+            Blog
           </LinkItem>
         </Stack>
         <Box flex={1} textAlign={'right'}>
@@ -79,7 +79,7 @@ export const Navbar = ({ path }: NavbarProps) => {
               <MenuList>
                 <MenuItem as={Link} href={'/'}>About</MenuItem>
                 <MenuItem as={Link} href={'/works'}>Works</MenuItem>
-                <MenuItem as={Link} href={'/posts'}>Posts</MenuItem>
+                <MenuItem as={Link} href={'/blog'}>Blog</MenuItem>
                 <MenuItem as={Link} href={'https://github.com/l0r5/homepage-lb'}>View Source</MenuItem>
               </MenuList>
             </Menu>
