@@ -33,13 +33,3 @@ export const KittyContainer = forwardRef((
     {children}
   </Box>
 ));
-
-const Loader = () => {
-  return (
-    <KittyContainer>
-      <KittySpinner />
-    </KittyContainer>
-  );
-};
-
-export default Loader;
