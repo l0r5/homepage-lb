@@ -18,16 +18,14 @@ export const Logo = () => {
 
   return (
     <Link href={'/'}>
-      <a>
-        <LogoBox>
-          <img src={initialsLogoImg} width={25} height={25} alt={'logo'} />
-          <Text color={useColorModeValue('gray.800', 'whiteAlpha.900')}
-                fontFamily="M PLUS Rounded 1c"
-                fontWeight="bold"
-                ml={3}>
-          </Text>
-        </LogoBox>
-      </a>
+      <LogoBox>
+        <img src={initialsLogoImg} width={25} height={25} alt={'logo'} />
+        <Text color={useColorModeValue('gray.800', 'whiteAlpha.900')}
+              fontFamily="M PLUS Rounded 1c"
+              fontWeight="bold"
+              ml={3}>
+        </Text>
+      </LogoBox>
     </Link>
   );
 };

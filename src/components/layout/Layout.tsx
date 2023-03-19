@@ -3,6 +3,9 @@ import { Box, Container } from '@chakra-ui/react';
 import { Navbar } from '../navbar/Navbar';
 import { AnimatePresence } from 'framer-motion';
 import { Footer } from '../footer/Footer';
+import SurfKittyLoader from '../surfkitty/SurfKittyLoader'
+import SurfKitty from '../surfkitty/SurfKitty';
+
 
 interface LayoutProps {
   children: ReactNode;
@@ -12,6 +15,7 @@ export const Layout = ({ children }: LayoutProps): ReactElement => {
   return (
       <Box as={'main'} pb={8}>
         <Navbar path="/" />
+
         <AnimatePresence
           mode={'wait'}
           initial={true}
@@ -22,6 +26,7 @@ export const Layout = ({ children }: LayoutProps): ReactElement => {
           }}
         >
           <Container maxW={'container.md'} pt={14}>
+            <SurfKitty />
             {children}
           </Container>
         </AnimatePresence>
