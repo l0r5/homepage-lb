@@ -14,10 +14,10 @@ const LogoBox = styled.span`
   }
 `;
 export const Logo = () => {
-  const initialsLogoImg = `${import.meta.env.VITE_BASE_PATH ?? ''}/images/logo${useColorModeValue('', '-dark')}.png`;
+  const initialsLogoImg = `/images/logo${useColorModeValue('', '-dark')}.png`;
 
   return (
-    <Link href={`${import.meta.env.VITE_BASE_PATH ?? ''}/`}>
+    <Link href={'/'}>
       <LogoBox>
         <img src={initialsLogoImg} width={25} height={25} alt={'logo'} />
         <Text color={useColorModeValue('gray.800', 'whiteAlpha.900')}

@@ -64,10 +64,10 @@ export const Navbar = ({ path }: NavbarProps) => {
           flexGrow={1}
           mt={{ base: 4, nmd: 0 }}
         >
-          <LinkItem href={`${import.meta.env.VITE_BASE_PATH ?? ''}/works`} path={path}>
+          <LinkItem href={'/works'} path={path}>
             Works
           </LinkItem>
-          <LinkItem href={`${import.meta.env.VITE_BASE_PATH ?? ''}/blog`} path={path}>
+          <LinkItem href={'/blog'} path={path}>
             Blog
           </LinkItem>
         </Stack>
@@ -77,9 +77,9 @@ export const Navbar = ({ path }: NavbarProps) => {
             <Menu>
               <MenuButton as={IconButton} icon={<HamburgerIcon />} variant={'outline'} aria-label={'Options'} />
               <MenuList>
-                <MenuItem as={Link} href={`${import.meta.env.VITE_BASE_PATH ?? ''}/`}>About</MenuItem>
-                <MenuItem as={Link} href={`${import.meta.env.VITE_BASE_PATH ?? ''}/works`}>Works</MenuItem>
-                <MenuItem as={Link} href={`${import.meta.env.VITE_BASE_PATH ?? ''}/blog`}>Blog</MenuItem>
+                <MenuItem as={Link} href={'/'}>About</MenuItem>
+                <MenuItem as={Link} href={'/works'}>Works</MenuItem>
+                <MenuItem as={Link} href={'/blog'}>Blog</MenuItem>
                 <MenuItem as={Link} href={'https://github.com/l0r5/homepage-lb'}>View Source</MenuItem>
               </MenuList>
             </Menu>
