@@ -12,16 +12,16 @@ function App() {
     <ChakraProvider theme={Theme}>
       <ThemeInitializer />
       <Layout>
-        <BrowserRouter>
-        <Routes>
-          {Object.values(ROUTES).map(({ path, Component }) => (
-            <Route
-              path={path}
-              key={path}
-              element={<Component />}
-            />
-          ))}
-        </Routes>
+        <BrowserRouter basename={import.meta.env.VITE_BASE_PATH}>
+          <Routes>
+            {Object.values(ROUTES).map(({ path, Component }) => (
+              <Route
+                key={path}
+                path={path}
+                element={<Component />}
+              />
+            ))}
+          </Routes>
         </BrowserRouter>
       </Layout>
     </ChakraProvider>
