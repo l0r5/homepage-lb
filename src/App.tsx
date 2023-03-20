@@ -1,34 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import './App.css';
+import { Layout } from './components/layout/Layout';
+import { ROUTES } from './routing/Routes';
+import { Theme } from './libs/Theme';
+import { ChakraProvider } from '@chakra-ui/react';
+import React from 'react';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import { ThemeInitializer } from './components/theme/ThemeInitializer';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+    <ChakraProvider theme={Theme}>
+      <ThemeInitializer />
+      <Layout>
+        <BrowserRouter basename={import.meta.env.VITE_BASE_PATH}>
+          <Routes>
+            {Object.values(ROUTES).map(({ path, Component }) => (
+              <Route
+                key={path}
+                path={path}
+                element={<Component />}
+              />
+            ))}
+          </Routes>
+        </BrowserRouter>
+      </Layout>
+    </ChakraProvider>
+  );
 }
 
-export default App
+export default App;
