@@ -18,7 +18,8 @@ The local dev server is configured to run on http://localhost:3000/. In case you
 
 ## Deploy to GitHub Pages
 
-For preview purposes, the app can be deployed to [GitHub Pages](https://pages.github.com/). It is in the way configured that it serves from the `origin/gh-pages` branch.
+For preview purposes, the app can be deployed to [GitHub Pages](https://pages.github.com/). It is in the way configured that it creates a branch with the /dist directory `origin/gh-pages` when the build ist done.
+
 Deploy your current state from the console:
 
     $ yarn deploy

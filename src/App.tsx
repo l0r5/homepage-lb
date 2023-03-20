@@ -13,15 +13,15 @@ function App() {
       <ThemeInitializer />
       <Layout>
         <BrowserRouter>
-        <Routes>
-          {Object.values(ROUTES).map(({ path, Component }) => (
-            <Route
-              path={path}
-              key={path}
-              element={<Component />}
-            />
-          ))}
-        </Routes>
+          <Routes>
+            {Object.values(ROUTES).map(({ path, Component }) => (
+              <Route
+                key={path}
+                path={path}
+                element={<Component />}
+              />
+            ))}
+          </Routes>
         </BrowserRouter>
       </Layout>
     </ChakraProvider>

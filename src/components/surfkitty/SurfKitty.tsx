@@ -12,7 +12,7 @@ const SurfKitty = () => {
   const refContainer = useRef<HTMLDivElement>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const refRenderer: MutableRefObject<THREE.WebGLRenderer | null> = useRef(null);
-  const urlKittyGLB = '/surfkitty.glb';
+  const urlKittyGLB = `${import.meta.env.VITE_BASE_PATH ?? ''}/surfkitty.glb`;
 
   const handleWindowResize = useCallback(() => {
     const { current: renderer } = refRenderer;
@@ -25,7 +25,6 @@ const SurfKitty = () => {
     }
   }, [refRenderer, refContainer]);
 
-  /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
     const { current: container } = refContainer;
     if (container) {

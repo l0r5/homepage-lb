@@ -39,7 +39,7 @@ export const LandingPage = (): ReactElement => {
             overflow="hidden"
           >
             <ProfileImage
-              src="/images/lars.jpeg"
+              src={`${import.meta.env.VITE_BASE_PATH ?? ''}/images/lars.jpeg`}
               alt="Profile image"
               borderRadius="full"
               width="100"
@@ -70,7 +70,7 @@ export const LandingPage = (): ReactElement => {
           challenging role.
         </Paragraph>
         <Box textAlign={'center'} my={4}>
-          <Button as={Link} href={'/works'} rightIcon={<ChevronRightIcon />} colorScheme={'teal'}>
+          <Button as={Link} href={`${import.meta.env.VITE_BASE_PATH ?? ''}/works`} rightIcon={<ChevronRightIcon />} colorScheme={'teal'}>
             My portfolio
           </Button>
         </Box>
