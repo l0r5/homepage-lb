@@ -64,8 +64,8 @@ export const Navbar = ({ path }: NavbarProps) => {
           flexGrow={1}
           mt={{ base: 4, nmd: 0 }}
         >
-          <LinkItem href={'/works'} path={path}>
-            Works
+          <LinkItem href={'/work'} path={path}>
+            Work
           </LinkItem>
           <LinkItem href={'/blog'} path={path}>
             Blog
@@ -78,7 +78,7 @@ export const Navbar = ({ path }: NavbarProps) => {
               <MenuButton as={IconButton} icon={<HamburgerIcon />} variant={'outline'} aria-label={'Options'} />
               <MenuList>
                 <MenuItem as={Link} href={'/'}>About</MenuItem>
-                <MenuItem as={Link} href={'/works'}>Works</MenuItem>
+                <MenuItem as={Link} href={'/work'}>Work</MenuItem>
                 <MenuItem as={Link} href={'/blog'}>Blog</MenuItem>
                 <MenuItem as={Link} href={'https://github.com/l0r5/homepage-lb'}>View Source</MenuItem>
               </MenuList>

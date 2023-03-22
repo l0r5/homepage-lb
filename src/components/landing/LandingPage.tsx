@@ -13,7 +13,8 @@ export const LandingPage = (): ReactElement => {
       <Box borderRadius={'lg'} p={3} mb={6} alignContent={'center'}
            bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
            css={{ backdropFilter: 'blur(10px)' }}>
-        Hello, I'm a full-stack developer based in Switzerland!
+          Hi, I'm Lars
+        - Full-Stack Developer based in Switzerland who loves to connect & create.
       </Box>
       <Box display={{ md: 'flex' }}>
         <Box flexGrow={1}>
