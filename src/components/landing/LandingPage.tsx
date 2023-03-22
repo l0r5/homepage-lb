@@ -13,8 +13,7 @@ export const LandingPage = (): ReactElement => {
       <Box borderRadius={'lg'} p={3} mb={6} alignContent={'center'}
            bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
            css={{ backdropFilter: 'blur(10px)' }}>
-          Hi, I'm Lars
-        - Full-Stack Developer based in Switzerland who loves to connect & create.
+        Hi, I'm a Full-Stack Developer based in Switzerland who loves to connect & create.
       </Box>
       <Box display={{ md: 'flex' }}>
         <Box flexGrow={1}>
@@ -51,24 +50,19 @@ export const LandingPage = (): ReactElement => {
       </Box>
       <Section delay={0.1}>
         <Heading as={'h3'} variant={'section-title'}>
-          Work
+          Intro
         </Heading>
-        <Paragraph>Highly self-motivated software
-          engineer with professional
-          experience designing, developing
-          and maintaining web, as well as
-          mobile, applications, using different
-          tech stacks.
-          Adept at understanding clients’
-          needs and delivering projects
-          accordingly. Strong academic background and hands on experience
-          bringing software-related business
-          ideas to life. Highly skilled at
-          collaborating with a team to ship
-          quality products within deadlines.
-          Looking forward to applying the
-          acquired range of skills in a
-          challenging role.
+        <Paragraph>As a passionate and dedicated software engineer, I bring industry experience in designing,
+          developing, and maintaining both web and mobile applications using a diverse range of tech stacks. I am
+          proficient in understanding clients' needs and delivering projects that meet their requirements. With a strong
+          academic background and hands-on experience in transforming software-related business ideas into reality, I am
+          committed to collaborating with teams to deliver high-quality products on time.</Paragraph>
+        <br />
+        <Paragraph>
+          Throughout my journey, I have honed my skills in various aspects of software engineering and am always eager
+          to take on challenging roles that allow me to apply and grow my expertise. I invite you to explore my
+          portfolio to discover the exciting projects I've had the pleasure of working on, and learn more about how I
+          can help bring your vision to life.
         </Paragraph>
         <Box textAlign={'center'} my={4}>
           <Button as={Link} href={'/works'} rightIcon={<ChevronRightIcon />} colorScheme={'teal'}>
@@ -78,7 +72,28 @@ export const LandingPage = (): ReactElement => {
       </Section>
       <Section delay={0.2}>
         <Heading as={'h3'} variant={'section-title'}>
-          Bio
+          Work Experience
+        </Heading>
+        <BioSection>
+          <BioYear>1990</BioYear>
+          Born in Heidenheim an der Brenz, Germany.
+        </BioSection>
+        <BioSection>
+          <BioYear>2017</BioYear>
+          Completed the Master Program of Information Systems at Technical University of Munich.
+        </BioSection>
+        <BioSection>
+          <BioYear>2018 to 2021</BioYear>
+          Worked at Bâloise Insurance & Bâloise Bank SoBa in Basel.
+        </BioSection>
+        <BioSection>
+          <BioYear>2021 to present</BioYear>
+          Works at Netcetera in Zurich.
+        </BioSection>
+      </Section>
+      <Section delay={0.2}>
+        <Heading as={'h3'} variant={'section-title'}>
+          Education
         </Heading>
         <BioSection>
           <BioYear>1990</BioYear>
