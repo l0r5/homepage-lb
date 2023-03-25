@@ -24,7 +24,7 @@ export const Layout = ({ children }: LayoutProps): ReactElement => {
             }
           }}
         >
-          <Container maxW={'container.md'} pt={14}>
+          <Container maxW={'container.lg'} pt={14}>
             <SurfKitty />
             {children}
           </Container>

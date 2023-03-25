@@ -10,7 +10,7 @@ import Experience from './experience/Experience';
 
 export const LandingPage = (): ReactElement => {
   return (
-    <Container>
+    <Container maxW={'container.lg'}>
       <Box borderRadius={'lg'} p={3} mb={6} alignContent={'center'}
            bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
            css={{ backdropFilter: 'blur(10px)' }}>

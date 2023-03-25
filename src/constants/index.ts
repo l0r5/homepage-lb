@@ -1,11 +1,11 @@
-import { netcetera } from '../assets';
+import { baloise, netcetera } from '../assets';
 
 export type Experience = {
   title: string;
   company_name: string;
   location: string;
   icon: string;
-  iconBg: string;
+  company_url: string,
   date: string;
   points: string[];
 }
@@ -16,7 +16,7 @@ export const experiences: Experience[] = [
     company_name: 'Netcetera AG, Zurich, CH',
     location: 'Zurich, CH',
     icon: netcetera,
-    iconBg: '',
+    company_url: 'https://www.netcetera.com/',
     date: 'July 2021 - Present',
     points: [
       'Development of a multi-tenant SaaS Web Application for Swiss pension funds.',
@@ -28,8 +28,8 @@ export const experiences: Experience[] = [
     title: 'Software Engineer / Solution Architect',
     company_name: 'Bâloise Insurance & Bâloise Bank SoBa',
     location: 'Basel, CH',
-    icon: '',
-    iconBg: '#383E56',
+    icon: baloise,
+    company_url: 'https://www.baloise.ch/',
     date: 'March 2020 - May 2021',
     points: [
       'Integration of the GDPR orchestration system “SmartRM” (by Butos) into the Bâloise system landscape.',
@@ -42,8 +42,8 @@ export const experiences: Experience[] = [
     title: 'Co-Founder (CTO)',
     company_name: 'Bâloise Insurance & Bâloise Bank SoBa',
     location: 'Basel/Zurich, CH',
-    icon: '',
-    iconBg: '#383E56',
+    icon: baloise,
+    company_url: 'https://www.baloise.ch/',
     date: 'October 2019 - March 2020',
     points: [
       'Corporate startup project, funded by Bâloise, with the goal to contribute to the corporate strategy and to discover new markets.',
@@ -56,8 +56,8 @@ export const experiences: Experience[] = [
     title: 'Software Engineer / Release Manager',
     company_name: 'Bâloise Insurance & Bâloise Bank SoBa',
     location: 'Basel, CH',
-    icon: '',
-    iconBg: '#383E56',
+    icon: baloise,
+    company_url: 'https://www.baloise.ch/',
     date: 'June 2018 - October 2019',
     points: [
       'Becoming familiar with release management and DevOps and taking over the role of a release manager.',

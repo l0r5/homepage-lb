@@ -49,7 +49,7 @@ export const Navbar = ({ path }: NavbarProps) => {
       style={{ backdropFilter: 'blur(10px)' }}
       zIndex={1}
     >
-      <Container display={'flex'} p={2} maxW={'container.md'} flexWrap={'wrap'} alignItems={'center'}
+      <Container display={'flex'} p={2} maxW={'container.lg'} flexWrap={'wrap'} alignItems={'center'}
                  justifyContent={'space-between'}>
         <Flex align={'center'} mr={5}>
           <Heading as={'h1'} size={'lg'} letterSpacing={'tighter'}>

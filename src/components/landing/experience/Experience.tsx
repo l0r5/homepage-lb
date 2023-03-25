@@ -7,74 +7,90 @@ import {
 import 'react-vertical-timeline-component/style.min.css';
 import { Experience, experiences } from '../../../constants';
 import styled from '@emotion/styled';
+import {
+  Box,
+  Divider,
+  Flex,
+  Heading,
+  Text,
+  Image,
+  useColorModeValue,
+  useTheme,
+  UnorderedList,
+  ListItem, Link
+} from '@chakra-ui/react';
 
 interface ExperienceCardProps {
   experience: Experience;
 }
 
-const bubbleColor = 'orange';
-
 const StyledVerticalTimelineElement = styled(VerticalTimelineElement)`
   .dateClassName {
-    /* default styles for smaller screens */
-  }
-
-  @media screen and (min-width: 768px) {
-    .dateClassName {
-      top: 50%;
-    }
+    top: 50% !important;
   }
 `;
 const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => {
+  const theme = useTheme();
+  const backgroundColor = useColorModeValue(
+    theme.colors.whiteAlpha[500],
+    theme.colors.whiteAlpha[200]
+  );
+  const dividerColor = useColorModeValue('gray.800', 'gray.200');
+
+
   return (
     <StyledVerticalTimelineElement
-      contentStyle={{ // Box
-        background: bubbleColor,
-        color: '#fff',
+      contentStyle={{
+        background: backgroundColor,
         boxShadow: 'none'
       }}
-      contentArrowStyle={{ borderRight: `7px solid  ${bubbleColor}` }}
+      contentArrowStyle={{ borderRight: `7px solid  ${backgroundColor}` }}
       date={experience.date}
       dateClassName="dateClassName"
-      iconStyle={{ background: experience.iconBg }}
       icon={
-        <div className="flex justify-center items-center w-full h-full">
-          <img
-            src={experience.icon}
-            alt={experience.company_name}
-            className="w-[60%] h-[60%] object-contain"
-          />
-        </div>
+        <Flex justifyContent="center" alignItems="center" w="full" h="full">
+          <Box width="80%" height="80%" borderRadius={'full'} overflow={'hidden'}
+               css={{ background: 'none !important' }}>
+            <Link href={experience.company_url} isExternal>
+              <Image src={experience.icon} alt={experience.company_name} objectFit="contain" />
+            </Link>
+          </Box>
+        </Flex>
       }
     >
-      <div>
-        <h3 className="text-white text-[24px] font-bold">{experience.title}</h3>
-        <p
-          className="text-secondary text-[16px] font-semibold"
-          style={{ margin: 0 }}
-        >
+      <Box>
+        <Heading as="h4" fontSize="18px">
+          {experience.title}
+        </Heading>
+        <Text color="secondary" fontSize="16px" fontWeight="semibold" mt={0} mb={0}>
           {experience.company_name}
-        </p>
-      </div>
-
-      <ul className="mt-5 list-disc ml-5 space-y-2">
+        </Text>
+      </Box>
+      <Divider borderColor={dividerColor} />
+      <UnorderedList mt={5} ml={5}>
         {experience.points.map((point, index) => (
-          <li
-            key={`experience-point-${index}`}
-            className="text-white-100 text-[14px] pl-1 tracking-wider"
-          >
-            {point}
-          </li>
+          <ListItem key={`experience-point-${index}`} pl={1}>
+            <Text css={{ fontWeight: 'normal !important' }}>
+              {point}
+            </Text>
+          </ListItem>
         ))}
-      </ul>
+      </UnorderedList>
     </StyledVerticalTimelineElement>
+
   );
 };
 
 const Experience = () => {
   return (
     <>
-
+      <Box
+        sx={{
+          '.vertical-timeline': {
+            width: '100%'
+          }
+        }}
+      >
         <VerticalTimeline>
           {experiences.map((experience, index) => (
             <ExperienceCard
@@ -83,6 +99,7 @@ const Experience = () => {
             />
           ))}
         </VerticalTimeline>
+      </Box>
     </>
   );
 };
