@@ -71,48 +71,27 @@ export const LandingPage = (): ReactElement => {
           </Button>
         </Box>
       </Section>
-      <Experience />
-
       <Section delay={0.2}>
         <Heading as={'h3'} variant={'section-title'}>
           Work Experience
         </Heading>
-        <BioSection>
-          <BioYear>1990</BioYear>
-          Born in Heidenheim an der Brenz, Germany.
-        </BioSection>
-        <BioSection>
-          <BioYear>2017</BioYear>
-          Completed the Master Program of Information Systems at Technical University of Munich.
-        </BioSection>
-        <BioSection>
-          <BioYear>2018 to 2021</BioYear>
-          Worked at Bâloise Insurance & Bâloise Bank SoBa in Basel.
-        </BioSection>
-        <BioSection>
-          <BioYear>2021 to present</BioYear>
-          Works at Netcetera in Zurich.
-        </BioSection>
+        <Experience />
       </Section>
       <Section delay={0.2}>
         <Heading as={'h3'} variant={'section-title'}>
           Education
         </Heading>
         <BioSection>
-          <BioYear>1990</BioYear>
-          Born in Heidenheim an der Brenz, Germany.
+          <BioYear>2014 - 2017</BioYear>
+          Master Program of Information Systems at Technical University of Munich.
         </BioSection>
         <BioSection>
-          <BioYear>2017</BioYear>
-          Completed the Master Program of Information Systems at Technical University of Munich.
+          <BioYear>2015</BioYear>
+          Semester abroad at San Diego State University.
         </BioSection>
         <BioSection>
-          <BioYear>2018 to 2021</BioYear>
-          Worked at Bâloise Insurance & Bâloise Bank SoBa in Basel.
-        </BioSection>
-        <BioSection>
-          <BioYear>2021 to present</BioYear>
-          Works at Netcetera in Zurich.
+          <BioYear>2010 - 2014</BioYear>
+          Bachelor Program of Information Systems at University of Augsburg.
         </BioSection>
       </Section>
       <Section delay={0.3}>

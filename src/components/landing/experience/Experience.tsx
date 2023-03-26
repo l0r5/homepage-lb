@@ -28,6 +28,12 @@ const StyledVerticalTimelineElement = styled(VerticalTimelineElement)`
   .dateClassName {
     top: 50% !important;
   }
+  .vertical-timeline-element-icon {
+    box-shadow: none;
+  }
+  .vertical-timeline::before {
+    width: 2px !important;
+  }
 `;
 const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => {
   const theme = useTheme();
@@ -36,7 +42,6 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => {
     theme.colors.whiteAlpha[200]
   );
   const dividerColor = useColorModeValue('gray.800', 'gray.200');
-
 
   return (
     <StyledVerticalTimelineElement
@@ -49,8 +54,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => {
       dateClassName="dateClassName"
       icon={
         <Flex justifyContent="center" alignItems="center" w="full" h="full">
-          <Box width="80%" height="80%" borderRadius={'full'} overflow={'hidden'}
-               css={{ background: 'none !important' }}>
+          <Box  borderRadius={'full'} overflow={'hidden'}>
             <Link href={experience.company_url} isExternal>
               <Image src={experience.icon} alt={experience.company_name} objectFit="contain" />
             </Link>
