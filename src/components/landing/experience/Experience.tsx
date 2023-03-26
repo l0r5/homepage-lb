@@ -31,8 +31,9 @@ const StyledVerticalTimelineElement = styled(VerticalTimelineElement)`
   .vertical-timeline-element-icon {
     box-shadow: none;
   }
-  .vertical-timeline::before {
-    width: 2px !important;
+  .vertical-timeline-element-content p {
+    font-size: 16px;
+    margin: 0;
   }
 `;
 const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => {

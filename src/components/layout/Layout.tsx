@@ -25,7 +25,6 @@ export const Layout = ({ children }: LayoutProps): ReactElement => {
           }}
         >
           <Container maxW={'container.lg'} pt={14}>
-            <SurfKitty />
             {children}
           </Container>
         </AnimatePresence>
