@@ -17,22 +17,23 @@ export const BlogHeader: React.FC = () => {
           src={'/images/blog_header.png'}
           alt="Blog header image"
           objectFit="cover"
-          opacity={0.5}
+          opacity={0.25}
           width="100%"
           height="100%"
         />
       </Box>
-      <VStack zIndex={10} textAlign="center" px={8} spacing={4} boxShadow="2xl">
-        <Text textTransform="uppercase" fontSize="sm" mb={4}>
-          Welcome to
-        </Text>
+      <Box textAlign="center" px={8} >
+
         <Text fontSize="4xl" fontWeight="medium">
-          my{' '}
+          <Text textTransform="uppercase" fontSize="medium" mb={2}>
+            Welcome to
+          </Text>
+          A journey through{' '}
           <Text as="span" color="orange.500">
-            Blog
+            code and creativity
           </Text>
         </Text>
-      </VStack>
+      </Box>
     </Flex>
   );
 };
