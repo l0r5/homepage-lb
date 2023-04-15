@@ -8,9 +8,12 @@ import SurfKitty from '../surfkitty/SurfKitty';
 
 interface LayoutProps {
   children: ReactNode;
+  fullWidth?: boolean;
+
+
 }
 
-export const Layout = ({ children }: LayoutProps): ReactElement => {
+export const Layout = ({ children, fullWidth = false }: LayoutProps): ReactElement => {
   return (
     <Box as={'main'} pb={8}>
       <Navbar path="/" />
@@ -24,11 +27,17 @@ export const Layout = ({ children }: LayoutProps): ReactElement => {
           }
         }}
       >
-        <Container maxW={'container.lg'} pt={14}>
-          {children}
-        </Container>
+        {fullWidth ? (
+          <Container maxW={'100%'} padding={0} pt={14}>
+            {children}
+          </Container>
+        ) : (
+          <Container maxW={'container.lg'} pt={14}>
+            {children}
+          </Container>
+        )}
       </AnimatePresence>
-      <Footer path="/" />
+      <Footer path="/"/>
     </Box>
   );
 };

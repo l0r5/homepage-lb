@@ -21,36 +21,43 @@ export const ROUTES: Routes<ExportedRoutes> = {
   LandingPage: {
     path: '/',
     Component: LandingPage,
-    exactMatch: true
+    exactMatch: true,
+    fullWidth: false
   },
   Blog: {
     path: '/blog',
     Component: Blog,
-    exactMatch: true
+    exactMatch: true,
+    fullWidth: true
   },
   Cookies: {
     path: '/cookies',
     Component: CookiePolicy,
-    exactMatch: true
+    exactMatch: true,
+    fullWidth: false
   },
   DataProtection: {
     path: '/data-protection',
     Component: DataProtection,
-    exactMatch: true
+    exactMatch: true,
+    fullWidth: false
   },
   Imprint: {
     path: '/imprint',
     Component: Imprint,
-    exactMatch: true
+    exactMatch: true,
+    fullWidth: false
   },
   LegalInformation: {
     path: '/legal-information',
     Component: LegalInformation,
-    exactMatch: true
+    exactMatch: true,
+    fullWidth: false
   },
   Work: {
     path: '/work',
     Component: Work,
-    exactMatch: true
+    exactMatch: true,
+    fullWidth: false
   }
 };

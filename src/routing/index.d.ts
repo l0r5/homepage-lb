@@ -5,6 +5,7 @@ export interface Route {
   Component: React.FC;
   roles?: string[];
   exactMatch?: boolean;
+  fullWidth?: boolean;
 }
 
 export type Routes<ER> = {
