@@ -8,9 +8,9 @@ interface BioSectionProps {
 
 export const BioSection: React.FC<BioSectionProps> = ({ year, children }) => {
   return (
-    <Flex justifyContent="space-between" alignItems="flex-start" mb={1} width="100%">
+    <Flex alignItems="flex-start" mb={1}>
       <BioYear>{year}</BioYear>
-      <Box flex="1">{children}</Box>
+      <Box>{children}</Box>
     </Flex>
   );
 };
@@ -18,4 +18,5 @@ export const BioSection: React.FC<BioSectionProps> = ({ year, children }) => {
 export const BioYear = styled(Box)`
   font-weight: bold;
   margin-right: 1em;
+  min-width: 6em;
 `;
