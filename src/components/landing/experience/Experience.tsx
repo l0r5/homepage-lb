@@ -85,7 +85,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => {
             cursor="pointer"
             boxSize={6}
             transform={isExpanded ? 'rotate(180deg)' : ''}
-            transition="transform 0.3s ease"
+            transition="transform 0.5s ease"
           />
         </Flex>
         <Divider borderColor={dividerColor} />

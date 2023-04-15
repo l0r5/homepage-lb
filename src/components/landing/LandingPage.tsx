@@ -100,10 +100,10 @@ export const LandingPage = (): ReactElement => {
           <BioSection year="2014 - 2017">
             Master Program of Information Systems at Technical University of Munich.
           </BioSection>
-          <BioSection  year="2015">
+          <BioSection year="2015">
             Semester abroad at San Diego State University.
           </BioSection>
-          <BioSection  year="2010 - 2014">
+          <BioSection year="2010 - 2014">
             Bachelor Program of Information Systems at University of Augsburg.
           </BioSection>
         </Section>
