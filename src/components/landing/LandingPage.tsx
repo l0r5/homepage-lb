@@ -3,7 +3,7 @@ import React, { ReactElement } from 'react';
 import ProfileImage from '../layout/ProfileImage';
 import { Section } from '../layout/Section';
 import { Paragraph } from '../layout/Paragraph';
-import { BioSection, BioYear } from '../layout/Bio';
+import { BioSection } from '../layout/Bio';
 import { IoLogoTwitter, IoLogoGithub, IoLogoLinkedin } from 'react-icons/io5';
 import Experience from './experience/Experience';
 import SurfKitty from '../surfkitty/SurfKitty';
@@ -97,16 +97,13 @@ export const LandingPage = (): ReactElement => {
           <Heading as={'h3'} variant={'section-title'}>
             Education
           </Heading>
-          <BioSection>
-            <BioYear>2014 - 2017</BioYear>
+          <BioSection year="2014 - 2017">
             Master Program of Information Systems at Technical University of Munich.
           </BioSection>
-          <BioSection>
-            <BioYear>2015</BioYear>
+          <BioSection  year="2015">
             Semester abroad at San Diego State University.
           </BioSection>
-          <BioSection>
-            <BioYear>2010 - 2014</BioYear>
+          <BioSection  year="2010 - 2014">
             Bachelor Program of Information Systems at University of Augsburg.
           </BioSection>
         </Section>

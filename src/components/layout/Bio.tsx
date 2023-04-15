@@ -1,12 +1,22 @@
-import { Box } from '@chakra-ui/react'
+import { Box, Flex } from '@chakra-ui/react';
 import styled from '@emotion/styled'
 
-export const BioSection = styled(Box)`
-  padding-left: 3.4em;
-  text-indent: -3.4em;
-`
+interface BioSectionProps {
+  year: string;
+  children: React.ReactNode;
+}
 
-export const BioYear = styled.span`
+export const BioSection: React.FC<BioSectionProps> = ({ year, children }) => {
+  return (
+    <Flex alignItems="flex-start" mb={1}>
+      <BioYear>{year}</BioYear>
+      <Box>{children}</Box>
+    </Flex>
+  );
+};
+
+export const BioYear = styled(Box)`
   font-weight: bold;
   margin-right: 1em;
-`
+  min-width: 6em;
+`;
