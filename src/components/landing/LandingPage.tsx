@@ -3,7 +3,6 @@ import React, { ReactElement } from 'react';
 import ProfileImage from '../layout/ProfileImage';
 import { Section } from '../layout/Section';
 import { Paragraph } from '../layout/Paragraph';
-import { ChevronRightIcon } from '@chakra-ui/icons';
 import { BioSection, BioYear } from '../layout/Bio';
 import { IoLogoTwitter, IoLogoGithub, IoLogoLinkedin } from 'react-icons/io5';
 import Experience from './experience/Experience';
