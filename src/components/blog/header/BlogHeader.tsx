@@ -22,17 +22,20 @@ export const BlogHeader: React.FC = () => {
           height="100%"
         />
       </Box>
-      <Box textAlign="center" px={8} >
-
-        <Text fontSize="4xl" fontWeight="medium">
-          <Text textTransform="uppercase" fontSize="medium" mb={2}>
-            Welcome to
-          </Text>
-          A journey through{' '}
-          <Text as="span" color="orange.500">
-            code and creativity
-          </Text>
-        </Text>
+      <Box textAlign="center" px={8}>
+        <Box textAlign="center" px={8}>
+          <VStack spacing={2}>
+            <Text textTransform="uppercase" fontSize="medium">
+              Welcome to
+            </Text>
+            <Text fontSize="4xl" fontWeight="medium">
+              A journey through{' '}
+              <Text as="span" color="orange.500">
+                code and creativity
+              </Text>
+            </Text>
+          </VStack>
+        </Box>
       </Box>
     </Flex>
   );

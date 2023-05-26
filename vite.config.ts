@@ -1,10 +1,16 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react-swc';
+import { plugin as markdownPlugin, Mode } from 'vite-plugin-markdown';
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    markdownPlugin({
+      mode: [Mode.HTML],
+    }),
+  ],
+  assetsInclude: ['**/*.md'],
   server: {
-    port: 3000
-  }
-})
+    port: 3000,
+  },
+});
