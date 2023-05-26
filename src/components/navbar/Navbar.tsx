@@ -67,9 +67,9 @@ export const Navbar = ({ path }: NavbarProps) => {
           {/*<LinkItem href={'/work'} path={path}>*/}
           {/*  Work*/}
           {/*</LinkItem>*/}
-          <LinkItem href={'/blog'} path={path}>
-            Blog
-          </LinkItem>
+          {/*<LinkItem href={'/blog'} path={path}>*/}
+          {/*  Blog*/}
+          {/*</LinkItem>*/}
         </Stack>
         <Box flex={1} textAlign={'right'}>
           <ThemeToggleButton />
@@ -79,7 +79,7 @@ export const Navbar = ({ path }: NavbarProps) => {
               <MenuList>
                 <MenuItem as={Link} href={'/'}>About</MenuItem>
                 {/*<MenuItem as={Link} href={'/work'}>Work</MenuItem>*/}
-                <MenuItem as={Link} href={'/blog'}>Blog</MenuItem>
+                {/*<MenuItem as={Link} href={'/blog'}>Blog</MenuItem>*/}
                 <MenuItem as={Link} href={'https://github.com/l0r5/homepage-lb'}>View Source</MenuItem>
               </MenuList>
             </Menu>
