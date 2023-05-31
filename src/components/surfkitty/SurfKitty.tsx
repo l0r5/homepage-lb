@@ -120,7 +120,7 @@ const SurfKitty = () => {
     <KittyContainer
       ref={refContainer}
       display={{ base: 'flex', md: 'block' }}
-      flexGrow={{ base: 1, md: 0 }}>
+      flexGrow={{ base: 0.3, md: 0 }}>
       {loading && <KittySpinner />}
     </KittyContainer>);
 };
