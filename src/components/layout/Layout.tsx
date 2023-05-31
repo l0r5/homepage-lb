@@ -12,23 +12,23 @@ interface LayoutProps {
 
 export const Layout = ({ children }: LayoutProps): ReactElement => {
   return (
-      <Box as={'main'} pb={8}>
-        <Navbar path="/" />
+    <Box as={'main'} pb={8}>
+      <Navbar path="/" />
 
-        <AnimatePresence
-          mode={'wait'}
-          initial={true}
-          onExitComplete={() => {
-            if (typeof window !== 'undefined') {
-              window.scrollTo({ top: 0 });
-            }
-          }}
-        >
-          <Container maxW={'container.lg'} pt={14}>
-            {children}
-          </Container>
-        </AnimatePresence>
-        <Footer />
-      </Box>
+      <AnimatePresence
+        mode={'wait'}
+        initial={true}
+        onExitComplete={() => {
+          if (typeof window !== 'undefined') {
+            window.scrollTo({ top: 0 });
+          }
+        }}
+      >
+        <Container maxW={'container.lg'} pt={14}>
+          {children}
+        </Container>
+      </AnimatePresence>
+      <Footer path="/" />
+    </Box>
   );
 };
