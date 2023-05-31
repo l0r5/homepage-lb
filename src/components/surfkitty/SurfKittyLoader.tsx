@@ -13,23 +13,33 @@ export const KittySpinner = () => (
 );
 
 type KittyContainerProps = {
-  children: React.ReactNode
+  children: React.ReactNode,
+  display: any,
+  flexGrow: any,
 }
 
 export const KittyContainer = forwardRef((
-  { children }: KittyContainerProps,
+  { children, display, flexGrow }: KittyContainerProps,
   ref: Ref<HTMLDivElement>
 ) => (
   <Box
-    ref={ref}
-    className="surf-kitty"
-    m="auto"
-    mt={['-20px', '-60px', '-120px']}
-    mb={['-40px', '-140px', '-200px']}
-    w={[280, 480, 640]}
-    h={[280, 480, 640]}
-    position="relative"
+    flexGrow={flexGrow}
+    display={'flex'}
+    justifyContent={'center'}
+    alignItems={'center'}
   >
-    {children}
+    <Box
+      ref={ref}
+      className="surf-kitty"
+      m="auto"
+      mt={['-20px', '-60px', '-120px']}
+      mb={['-40px', '-140px', '-200px']}
+      w={[280, 480, 640]}
+      h={[280, 480, 640]}
+      position="relative"
+      display={display}
+    >
+      {children}
+    </Box>
   </Box>
 ));

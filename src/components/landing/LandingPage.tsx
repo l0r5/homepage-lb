@@ -11,21 +11,36 @@ import SurfKitty from '../surfkitty/SurfKitty';
 export const LandingPage = (): ReactElement => {
   return (
     <>
-      <Box display={{ md: 'flex' }}>
-        <Box flexGrow={1}>
+      <Box
+        display={{ base: 'flex', md: 'flex' }}
+        flexDirection={'column'}
+        justifyContent={'center'}
+        alignItems={{ base: 'center', md: 'start' }}
+        minHeight={{ base: '100vh', md: 'initial' }}
+        width={'100%'}
+        paddingBottom={{ base: 16, md: 0 }}
+      >
+        <Box
+          flexGrow={{ base: 0.1, md: 0 }}>
           <Heading as={'h2'} variant={'page-title'}>
             Lars Braitinger
           </Heading>
           <p>Software Engineer</p>
         </Box>
+        <SurfKitty />
+        <Container maxW={'container.lg'}>
+          <Box borderRadius={'lg'}
+               p={3}
+               mb={6}
+               alignContent={'center'}
+               bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+               css={{ backdropFilter: 'blur(10px)' }}
+               alignSelf={'flex-start'}>
+            Hi, I'm a Full-Stack Developer based in Switzerland who loves to connect & create.
+          </Box>
+        </Container>
       </Box>
-      <SurfKitty />
       <Container maxW={'container.lg'}>
-        <Box borderRadius={'lg'} p={3} mb={6} alignContent={'center'}
-             bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-             css={{ backdropFilter: 'blur(10px)' }}>
-          Hi, I'm a Full-Stack Developer based in Switzerland who loves to connect & create.
-        </Box>
         <Section delay={0.1}>
           <Heading as={'h3'} variant={'section-title'}>
             Intro
@@ -69,14 +84,17 @@ export const LandingPage = (): ReactElement => {
                 developing, and maintaining both web and mobile applications using a diverse range of tech stacks. I am
                 proficient in understanding clients' needs and delivering projects that meet their requirements. With a
                 strong
-                academic background and hands-on experience in transforming software-related business ideas into reality, I
+                academic background and hands-on experience in transforming software-related business ideas into
+                reality, I
                 am
                 committed to collaborating with teams to deliver high-quality products on time.</Paragraph>
               <br />
               <Paragraph>
-                Throughout my journey, I have honed my skills in various aspects of software engineering and am always eager
+                Throughout my journey, I have honed my skills in various aspects of software engineering and am always
+                eager
                 to take on challenging roles that allow me to apply and grow my expertise. I invite you to explore my
-                portfolio to discover the exciting projects I've had the pleasure of working on, and learn more about how I
+                portfolio to discover the exciting projects I've had the pleasure of working on, and learn more about
+                how I
                 can help bring your vision to life.
               </Paragraph>
             </Box>

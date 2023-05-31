@@ -117,8 +117,12 @@ const SurfKitty = () => {
   }, [handleWindowResize]);
 
   return (
-    <KittyContainer ref={refContainer}>{loading && <KittySpinner />}</KittyContainer>
-  );
+    <KittyContainer
+      ref={refContainer}
+      display={{ base: 'flex', md: 'block' }}
+      flexGrow={{ base: 1, md: 0 }}>
+      {loading && <KittySpinner />}
+    </KittyContainer>);
 };
 
 export default SurfKitty;
