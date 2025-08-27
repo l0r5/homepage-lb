@@ -20,37 +20,30 @@ type ExportedRoutes =
 export const ROUTES: Routes<ExportedRoutes> = {
   LandingPage: {
     path: '/',
-    Component: LandingPage,
-    exactMatch: true
+    Component: LandingPage
   },
   Blog: {
     path: '/blog',
-    Component: Blog,
-    exactMatch: true
+    Component: Blog
   },
   Cookies: {
     path: '/cookies',
-    Component: CookiePolicy,
-    exactMatch: true
+    Component: CookiePolicy
   },
   DataProtection: {
     path: '/data-protection',
-    Component: DataProtection,
-    exactMatch: true
+    Component: DataProtection
   },
   Imprint: {
     path: '/imprint',
-    Component: Imprint,
-    exactMatch: true
+    Component: Imprint
   },
   LegalInformation: {
     path: '/legal-information',
-    Component: LegalInformation,
-    exactMatch: true
+    Component: LegalInformation
   },
   Work: {
     path: '/work',
-    Component: Work,
-    exactMatch: true
+    Component: Work
   }
 };
