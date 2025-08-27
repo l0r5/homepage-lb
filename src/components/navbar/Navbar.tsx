@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import {
   Box,
   Container,
@@ -16,20 +16,27 @@ import { HamburgerIcon } from '@chakra-ui/icons';
 import { Logo } from '../landing/Logo';
 import { ThemeToggleButton } from '../theme/ThemeToggleButton';
 
+// MIGRATION NOTE FOR REACT 19:
+// This component uses Chakra UI components with complex union types
+// When upgrading to React 19, consider using more explicit prop types
+// and refactoring nested component structures
+
 interface LinkProps {
   href: string;
   path: string;
   children: ReactNode;
 }
 
-const LinkItem = ({ href, path, children }: LinkProps) => {
+const LinkItem: React.FC<LinkProps> = ({ href, path, children }) => {
   const active = path === href;
   const inactiveColor = useColorModeValue('gray200', 'whiteAlpha.900');
   return (
-    <Link href={href}
-          p={2}
-          bg={active ? 'glassTeal' : undefined}
-          color={active ? '#202023' : inactiveColor}>
+    <Link
+      href={href}
+      p={2}
+      bg={active ? 'glassTeal' : undefined}
+      color={active ? '#202023' : inactiveColor}
+    >
       {children}
     </Link>
   );
@@ -39,18 +46,27 @@ interface NavbarProps {
   path: string;
 }
 
-export const Navbar = ({ path }: NavbarProps) => {
+export const Navbar: React.FC<NavbarProps> = ({ path }) => {
+  // Extract color values to simplify JSX
+  const bgColor = useColorModeValue('#ffffff40', '#20202380');
+  
   return (
     <Box
       position={'fixed'}
       as={'nav'}
       w={'100%'}
-      bg={useColorModeValue('#ffffff40', '#20202380')}
+      bg={bgColor}
       style={{ backdropFilter: 'blur(10px)' }}
       zIndex={1}
     >
-      <Container display={'flex'} p={2} maxW={'container.lg'} flexWrap={'wrap'} alignItems={'center'}
-                 justifyContent={'space-between'}>
+      <Container 
+        display={'flex'} 
+        p={2} 
+        maxW={'container.lg'} 
+        flexWrap={'wrap'} 
+        alignItems={'center'}
+        justifyContent={'space-between'}
+      >
         <Flex align={'center'} mr={5}>
           <Heading as={'h1'} size={'lg'} letterSpacing={'tighter'}>
             <Logo />

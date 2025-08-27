@@ -1,6 +1,18 @@
 import { mode } from '@chakra-ui/theme-tools';
 import { extendTheme, ThemeConfig, StyleFunctionProps } from '@chakra-ui/react';
 
+/**
+ * Theme configuration for Chakra UI
+ *
+ * NOTE FOR FUTURE 3.X MIGRATION:
+ * - The theme API in Chakra UI 3.x has been redesigned
+ * - When upgrading to 3.x, the following changes will be needed:
+ *   1. Update imports from theme-tools (some may be moved directly into @chakra-ui/react)
+ *   2. Review the new theme extension API and semantic tokens system
+ *   3. Update StyleFunctionProps usage which may have a different structure
+ *   4. Check for breaking changes in the color mode implementation
+ */
+
 const styles = {
   global: (props: StyleFunctionProps) => ({
     body: {

@@ -9,29 +9,30 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@chakra-ui/icons": "^2.0.17",
-    "@chakra-ui/react": "^2.5.1",
-    "@chakra-ui/theme-tools": "^2.0.16",
-    "@emotion/react": "^11.10.6",
-    "@emotion/styled": "^11.10.6",
-    "@types/react-router-dom": "^5.3.3",
+    "@chakra-ui/icons": "^2.1.1",
+    "@chakra-ui/react": "^2.8.2",
+    "@chakra-ui/theme-tools": "^2.1.1",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
     "@types/react-vertical-timeline-component": "^3.3.3",
-    "@types/three": "^0.149.0",
-    "framer-motion": "^9.0.4",
+    "@types/three": "^0.160.0",
+    "framer-motion": "^11.0.5",
     "gh-pages": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.7.1",
-    "react-router-dom": "^6.8.2",
+    "react-icons": "^4.12.0",
+    "react-router-dom": "^6.22.1",
     "react-vertical-timeline-component": "^3.6.0",
-    "three": "^0.150.1"
+    "three": "^0.160.0"
   },
   "devDependencies": {
-    "@types/react": "^18.0.27",
-    "@types/react-dom": "^18.0.10",
-    "@vitejs/plugin-react-swc": "^3.0.0",
+    "@swc/plugin-emotion": "^11.0.2",
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "@vitejs/plugin-react-swc": "^3.5.0",
     "prettier": "2.8.4",
-    "typescript": "^4.9.3",
-    "vite": "^4.1.0"
+    "terser": "^5.43.1",
+    "typescript": "^5.3.3",
+    "vite": "^5.1.4"
   }
 }
