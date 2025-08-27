@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback, MutableRefObject } from 'react';
 import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { loadGLTFModel } from '../../libs/GLTFModel';
 import { KittySpinner, KittyContainer } from './SurfKittyLoader';
 
@@ -34,11 +34,13 @@ const SurfKitty = () => {
 
       const renderer = new THREE.WebGLRenderer({
         antialias: true,
-        alpha: true
+        alpha: true,
+        preserveDrawingBuffer: true
       });
       renderer.setPixelRatio(window.devicePixelRatio);
       renderer.setSize(scW, scH);
-      renderer.outputEncoding = THREE.sRGBEncoding;
+      renderer.outputColorSpace = THREE.SRGBColorSpace;
+      renderer.toneMapping = THREE.NoToneMapping; // Preserve original colors
       container.appendChild(renderer.domElement);
       refRenderer.current = renderer;
       const scene = new THREE.Scene();
@@ -62,8 +64,20 @@ const SurfKitty = () => {
       camera.position.copy(initialCameraPosition);
       camera.lookAt(target);
 
-      const ambientLight = new THREE.AmbientLight(0xcccccc, 1);
+      const ambientLight = new THREE.AmbientLight(0xffffff, 1.8);
       scene.add(ambientLight);
+      
+      const frontLight = new THREE.DirectionalLight(0xffffff, 1.2);
+      frontLight.position.set(3, 4, 5);
+      scene.add(frontLight);
+      
+      const leftLight = new THREE.DirectionalLight(0xffffff, 0.6);
+      leftLight.position.set(-4, 2, 3);
+      scene.add(leftLight);
+      
+      const accentLight = new THREE.PointLight(0xff9900, 0.5, 15);
+      accentLight.position.set(0, 5, 3);
+      scene.add(accentLight);
 
       const controls = new OrbitControls(camera, renderer.domElement);
       controls.autoRotate = true;
