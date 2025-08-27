@@ -91,7 +91,6 @@ export const Navbar: React.FC<NavbarProps> = ({ path }) => {
           <ThemeToggleButton />
           <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
             <Menu>
-              {/* @ts-expect-error - Known complex union type issue with Chakra UI components */}
               <MenuButton as={IconButton} icon={<HamburgerIcon />} variant={'outline'} aria-label={'Options'} />
               <MenuList>
                 <MenuItem as={Link} href={'/'}>About</MenuItem>

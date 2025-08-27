@@ -29,7 +29,6 @@ export const Logo: React.FC = () => {
   const textColor = useColorModeValue('gray.800', 'whiteAlpha.900');
 
   return (
-    // @ts-expect-error - Known issue with complex union types in Chakra UI components
     <Link href={'/'}>
       <LogoBox>
         <img src={initialsLogoImg} width={25} height={25} alt={'logo'} />
