@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+// MIGRATION NOTE FOR REACT 19:
+// The react-vertical-timeline-component library uses an older version of React types
+// This will need to be replaced or updated when upgrading to React 19
 import {
   VerticalTimeline,
   VerticalTimelineElement
@@ -6,8 +9,8 @@ import {
 import { ChevronDownIcon } from '@chakra-ui/icons';
 
 import 'react-vertical-timeline-component/style.min.css';
-import { Experience, experiences } from '../../../constants';
-import styled from '@emotion/styled';
+import type { Experience as ExperienceType } from '../../../constants';
+import { experiences } from '../../../constants';
 import {
   Box,
   Divider,
@@ -18,27 +21,17 @@ import {
   useColorModeValue,
   useTheme,
   UnorderedList,
-  ListItem, Link, Collapse
+  ListItem, 
+  Link, 
+  Collapse
 } from '@chakra-ui/react';
 
 interface ExperienceCardProps {
-  experience: Experience;
+  experience: ExperienceType;
 }
 
-const StyledVerticalTimelineElement = styled(VerticalTimelineElement)`
-  .dateClassName {
-    top: 50% !important;
-  }
-
-  .vertical-timeline-element-icon {
-    box-shadow: none;
-  }
-
-  .vertical-timeline-element-content p {
-    font-size: 16px;
-    margin: 0;
-  }
-`;
+// We're using a functional component with explicit type annotations
+// This avoids issues with the timeline component's type definitions
 const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => {
   const theme = useTheme();
   const backgroundColor = useColorModeValue(
@@ -51,8 +44,11 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => {
   const handleToggle = () => {
     setIsExpanded(!isExpanded);
   };
+  
   return (
-    <StyledVerticalTimelineElement
+    // @ts-expect-error - Known type compatibility issue with updated React types
+    <VerticalTimelineElement
+      className="custom-timeline-element"
       contentStyle={{
         background: backgroundColor,
         boxShadow: 'none'
@@ -61,13 +57,20 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => {
       date={experience.date}
       dateClassName="dateClassName"
       icon={
-        <Flex justifyContent="center" alignItems="center" w="full" h="full">
+        // Using Box with display="flex" instead of Flex to avoid complex union type issues
+        <Box
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          width="100%"
+          height="100%"
+        >
           <Box borderRadius={'full'} overflow={'hidden'}>
             <Link href={experience.company_url} isExternal>
               <Image src={experience.icon} alt={experience.company_name} objectFit="contain" />
             </Link>
           </Box>
-        </Flex>
+        </Box>
       }
     >
       <Box w="100%" h="100%">
@@ -101,21 +104,32 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => {
           </UnorderedList>
         </Collapse>
       </Box>
-    </StyledVerticalTimelineElement>
-
+    </VerticalTimelineElement>
   );
 };
 
-const Experience = () => {
+// Renamed to ExperienceSection to avoid conflict with the imported type
+const ExperienceSection: React.FC = () => {
   return (
     <>
       <Box
         sx={{
           '.vertical-timeline': {
             width: '100%'
+          },
+          '.custom-timeline-element .dateClassName': {
+            top: '50% !important'
+          },
+          '.custom-timeline-element .vertical-timeline-element-icon': {
+            boxShadow: 'none'
+          },
+          '.custom-timeline-element .vertical-timeline-element-content p': {
+            fontSize: '16px',
+            margin: 0
           }
         }}
       >
+        {/* @ts-expect-error - Known type compatibility issue with updated React types */}
         <VerticalTimeline>
           {experiences.map((experience, index) => (
             <ExperienceCard
@@ -129,4 +143,4 @@ const Experience = () => {
   );
 };
 
-export default Experience;
+export default ExperienceSection;
